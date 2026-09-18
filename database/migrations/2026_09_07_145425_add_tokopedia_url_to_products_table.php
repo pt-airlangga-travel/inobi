@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('products', function (Blueprint $table) {
+            $table->text('tokopedia_url')->nullable()->after('shopee_url');
+        });
+
+        DB::table('products')
+            ->whereRaw('LOWER(name) NOT LIKE ?', ['%bhanex%'])
+            ->whereRaw('LOWER(name) NOT LIKE ?', ['%bioactin%'])
+            ->update([
+                'price' => null,
+                'tokopedia_url' => 'https://www.tokopedia.com/inobi',
+            ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('tokopedia_url');
+        });
+    }
+};
