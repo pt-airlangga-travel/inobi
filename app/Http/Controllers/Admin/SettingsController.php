@@ -4,37 +4,30 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class SettingsController extends Controller
 {
-    public function index(): View
+    public function index()
     {
-        $settings = Setting::query()->pluck('value', 'key');
-
-        return view('admin.setting', compact('settings'));
+        $settings = Setting::orderBy('key', 'asc')->get();
+        return view('admin.settings.index', compact('settings'));
     }
 
-    public function update(Request $request): RedirectResponse
+    public function edit(Setting $setting)
+    {
+        return view('admin.settings.form', compact('setting'));
+    }
+
+    public function update(Request $request, Setting $setting)
     {
         $validated = $request->validate([
-            'site_name' => ['required', 'string', 'max:255'],
-            'company_email' => ['required', 'email', 'max:255'],
-            'contact_phone' => ['nullable', 'string', 'max:50'],
-            'site_description' => ['nullable', 'string', 'max:1000'],
-            'address' => ['nullable', 'string', 'max:1000'],
-            'instagram_url' => ['nullable', 'url', 'max:255'],
-            'facebook_url' => ['nullable', 'url', 'max:255'],
-            'linkedin_url' => ['nullable', 'url', 'max:255'],
-            'whatsapp_url' => ['nullable', 'url', 'max:255'],
+            'key' => 'required|string|max:255|unique:settings,key,' . $setting->id,
+            'value' => 'nullable|string',
         ]);
 
-        foreach ($validated as $key => $value) {
-            Setting::updateOrCreate(['key' => $key], ['value' => $value]);
-        }
+        $setting->update($validated);
 
-        return redirect()->route('admin.settings')->with('success', __('ui.success_settings'));
+        return redirect()->route('admin.settings.index')->with('success', 'Pengaturan berhasil diperbarui.');
     }
 }

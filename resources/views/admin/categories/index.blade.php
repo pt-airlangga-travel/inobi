@@ -7,7 +7,7 @@
     <div class="admin-page-header">
         <div>
             <h1>Kategori & Folder Produk</h1>
-            <p>{{ app()->getLocale() === 'id' ? 'Kelola jenis dan folder kategori produk sesuai katalog INOBI.' : 'Manage product types and folder categories according to the INOBI catalog.' }}</p>
+            <p>Kelola jenis dan folder kategori produk sesuai katalog INOBI.</p>
         </div>
         <div class="d-flex gap-2">
             <a href="{{ route('admin.products.index') }}" class="btn btn-outline-secondary">

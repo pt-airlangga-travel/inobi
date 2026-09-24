@@ -7,7 +7,7 @@
     <div class="admin-page-header">
         <div>
             <h1>Products</h1>
-            <p>{{ app()->getLocale() === 'id' ? 'Kelola produk yang tampil di website INOBI.' : 'Manage products displayed on the INOBI website.' }}</p>
+            <p>Kelola produk yang tampil di website INOBI.</p>
         </div>
         <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
             <i class="fas fa-plus me-2"></i> {{ __('ui.add') }} {{ __('ui.products') }}

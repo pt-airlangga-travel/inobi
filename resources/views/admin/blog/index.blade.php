@@ -11,13 +11,13 @@
     <div>
         <h1>Blog</h1>
         <p>
-            {{ app()->getLocale() === 'id' ? 'Kelola artikel yang tampil di website INOBI.' : 'Manage articles displayed on the INOBI website.' }}
+            Kelola artikel yang tampil di website INOBI.
         </p>
     </div>
 
     <a href="{{ route('admin.blog.create') }}" class="btn btn-primary">
         <i class="fas fa-plus me-2"></i>
-        {{ __('ui.add') }} {{ app()->getLocale() === 'id' ? 'Artikel' : 'Article' }}
+        {{ __('ui.add') }} Artikel
     </a>
 </div>
 

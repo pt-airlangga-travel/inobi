@@ -22,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        \Illuminate\Pagination\Paginator::useBootstrapFive();
+
         View::composer('partials.header', function ($view) {
             $headerProducts = Product::with(['category', 'translations'])
                 ->latest()

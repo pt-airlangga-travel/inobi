@@ -7,9 +7,9 @@
     <div class="admin-page-header">
         <div>
             <h1>Featured Work</h1>
-            <p>{{ app()->getLocale() === 'id' ? 'Kelola foto kegiatan yang tampil di halaman utama.' : 'Manage activity photos displayed on the homepage.' }}</p>
+            <p>Kelola foto kegiatan yang tampil di halaman utama.</p>
         </div>
-        <a href="{{ route('admin.featured-works.create') }}" class="btn btn-primary"><i class="fas fa-plus me-2"></i>{{ __('ui.add') }} {{ app()->getLocale() === 'id' ? 'Foto' : 'Photo' }}</a>
+        <a href="{{ route('admin.featured-works.create') }}" class="btn btn-primary"><i class="fas fa-plus me-2"></i>{{ __('ui.add') }} Foto</a>
     </div>
 
     @if(session('success'))

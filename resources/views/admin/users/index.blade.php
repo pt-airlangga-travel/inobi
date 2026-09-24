@@ -7,7 +7,7 @@
     <div class="admin-page-header">
         <div>
             <h1>Users</h1>
-            <p>{{ app()->getLocale() === 'id' ? 'Kelola akun dan akses administrator website.' : 'Manage website accounts and administrator access.' }}</p>
+            <p>Kelola akun dan akses administrator website.</p>
         </div>
         <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
             <i class="fas fa-plus me-2"></i> {{ __('ui.add') }} {{ __('ui.users') }}

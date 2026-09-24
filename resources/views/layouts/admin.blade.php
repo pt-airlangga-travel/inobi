@@ -420,7 +420,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.settings') }}" class="{{ request()->routeIs('admin.settings*') ? 'active' : '' }}">
+                <a href="{{ route('admin.settings.index') }}" class="{{ request()->routeIs('admin.settings*') ? 'active' : '' }}">
                     <i class="fas fa-cog"></i> {{ __('ui.settings') }}
                 </a>
             </li>
@@ -452,11 +452,7 @@
                     <div class="name">{{ Auth::user()->name ?? 'Admin' }}</div>
                     <div class="role">{{ __('ui.administrator') }}</div>
                 </div>
-                <div class="language-switcher admin-language-switcher">
-                    <a href="{{ route('language.switch', 'id') }}" class="{{ app()->getLocale() === 'id' ? 'active' : '' }}">ID</a>
-                    <span>/</span>
-                    <a href="{{ route('language.switch', 'en') }}" class="{{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
-                </div>
+
                 <div class="avatar">
                     {{ substr(Auth::user()->name ?? 'A', 0, 1) }}
                 </div>

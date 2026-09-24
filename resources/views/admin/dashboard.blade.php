@@ -9,8 +9,8 @@
     <div class="welcome-section mb-4">
         <div class="welcome-card">
             <div class="welcome-text">
-                <h2>Welcome back, {{ Auth::user()->name ?? 'Admin' }}! 👋</h2>
-                <p class="text-muted">Here's what's happening with your business today.</p>
+                <h2>Selamat datang kembali, {{ Auth::user()->name ?? 'Admin' }}! 👋</h2>
+                <p class="text-white opacity-75">Berikut adalah ringkasan aktivitas website Anda hari ini.</p>
             </div>
             <div class="welcome-date">
                 <span class="date-badge">
@@ -115,7 +115,7 @@
                             </div>
                             <span>Manage Users</span>
                         </a>
-                        <a href="{{ route('admin.settings') }}" class="action-item">
+                        <a href="{{ route('admin.settings.index') }}" class="action-item">
                             <div class="action-icon" style="background: #f3e5f5; color: #9c27b0;">
                                 <i class="fas fa-cog"></i>
                             </div>

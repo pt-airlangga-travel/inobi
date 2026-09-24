@@ -108,4 +108,5 @@ return [
     'about_mission' => 'Misi kami adalah menyederhanakan penelitian dan pendidikan dengan menyediakan platform lengkap untuk berbagai alat dan material yang dibutuhkan, sehingga peneliti dan pendidik dapat fokus pada inovasi dan penyebaran pengetahuan.',
     'commitment_one' => 'Dengan beragam merek, kami memberikan banyak pilihan agar mitra dapat menemukan solusi yang tepat sesuai kebutuhan mereka.',
     'commitment_two' => 'Kami berkomitmen menghadirkan pengalaman yang mudah dalam pengadaan peralatan, perangkat, dan material.',
+    'company_profile_footer' => 'PT. Inovasi Bioproduk Indonesia (INOBI) menyediakan bioproduk, alat kesehatan, peralatan laboratorium, diagnostik, dan reagen. Sebagai bagian dari PT Dharma Putra Airlangga, kami berkomitmen menghadirkan produk inovatif untuk kemajuan riset dan kesehatan di Indonesia.',
 ];

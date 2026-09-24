@@ -18,6 +18,8 @@ class AdminMiddleware
             abort(403, 'Anda tidak memiliki akses ke halaman admin.');
         }
 
+        app()->setLocale('id');
+
         return $next($request);
     }
 }

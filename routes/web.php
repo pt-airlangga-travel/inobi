@@ -83,6 +83,5 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::delete('/featured-works/{featuredWork}', [FeaturedWorkController::class, 'destroy'])->name('featured-works.destroy');
 
     Route::resource('users', UserController::class)->except('show');
-    Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
-    Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
+    Route::resource('settings', SettingsController::class)->only(['index', 'edit', 'update']);
 });
