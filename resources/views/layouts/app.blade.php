@@ -12,6 +12,7 @@
     @include('partials.header')
     <main>@yield('content')</main>
     @include('partials.footer')
+    <script src="{{ asset('js/main.js') }}" defer></script>
 </body>
 
 </html>

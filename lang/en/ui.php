@@ -2,6 +2,7 @@
 
 return [
     'language' => 'Language',
+    'menu' => 'Menu',
     'indonesian' => 'Indonesian',
     'english' => 'English',
     'home' => 'Home',
