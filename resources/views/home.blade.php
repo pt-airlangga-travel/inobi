@@ -170,13 +170,17 @@
                         <div class="product-image-wrapper-wrap">
                             <a href="{{ route('products.show', $product) }}" class="product-image-wrapper">
 
-                                @if($product->image)
+                                @if($product->image_url)
                                     <img
-                                        src="{{ asset($product->image) }}"
+                                        src="{{ $product->image_url }}"
                                         alt="{{ $product->name }}"
                                         class="product-image"
                                         loading="lazy"
+                                        onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}"
                                     >
+                                    <div class="product-no-image" style="display: none;">
+                                        <span>{{ __('ui.no_image') }}</span>
+                                    </div>
                                 @else
                                     <div class="product-no-image">
                                         <span>{{ __('ui.no_image') }}</span>
@@ -293,8 +297,9 @@
             <div class="featured-image">
 
                 <img
-                    src="{{ asset($featuredProduct->image ?: 'images/bhanex.png') }}"
-                    alt="{{ $featuredProduct->name }}">
+                    src="{{ $featuredProduct->image_url ?: asset('images/bhanex.png') }}"
+                    alt="{{ $featuredProduct->name }}"
+                    onerror="this.onerror=null; this.src='{{ asset('images/bhanex.png') }}';">
 
             </div>
 

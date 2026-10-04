@@ -17,4 +17,13 @@ class ProductImage extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function getImageUrlAttribute(): ?string
+    {
+        if ($this->path && file_exists(public_path($this->path)) && is_file(public_path($this->path))) {
+            return asset($this->path);
+        }
+
+        return null;
+    }
 }

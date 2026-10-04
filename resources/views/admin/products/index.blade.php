@@ -47,11 +47,15 @@
                             <tr>
                                 <td>{{ $product->id }}</td>
                                 <td>
-                                    @if($product->image)
-                                        <img src="{{ asset($product->image) }}" 
+                                    @if($product->image_url)
+                                        <img src="{{ $product->image_url }}" 
                                              alt="{{ $product->name }}" 
                                              width="50" height="50" 
-                                             style="object-fit: cover; border-radius: 6px;">
+                                             style="object-fit: cover; border-radius: 6px;"
+                                             onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
+                                        <div style="width:50px;height:50px;background:#f0f2f5;border-radius:6px;display:none;align-items:center;justify-content:center;color:#999;font-size:10px;">
+                                            No Image
+                                        </div>
                                     @else
                                         <div style="width:50px;height:50px;background:#f0f2f5;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#999;font-size:10px;">
                                             No Image

@@ -21,7 +21,7 @@
             
             <div class="nav-dropdown" id="navDropdown">
 
-                <button type="button" class="products-link {{ request()->is('products*') ? 'active' : '' }}" id="productsDropdownBtn" aria-expanded="false">
+                <button type="button" class="products-link {{ request()->is('products*') ? 'active' : '' }}" id="productsDropdownBtn" aria-expanded="false" style="background: transparent; border: none; padding: 0; font: inherit; cursor: pointer; color: inherit;">
                     <span>{{ __('ui.products') }}</span> <span class="arrow">⌄</span>
                 </button>
 

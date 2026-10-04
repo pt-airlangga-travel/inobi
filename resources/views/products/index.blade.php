@@ -66,8 +66,17 @@
                             <article class="product-card {{ $product->hasPublicPrice() ? 'product-card-priced' : 'product-card-description' }}">
                                 <div class="product-image-wrapper-wrap">
                                     <a href="{{ route('products.show', $product) }}" class="product-image-wrapper">
-                                        @if($product->image)
-                                            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="product-image" loading="lazy">
+                                        @if($product->image_url)
+                                            <img
+                                                src="{{ $product->image_url }}"
+                                                alt="{{ $product->name }}"
+                                                class="product-image"
+                                                loading="lazy"
+                                                onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}"
+                                            >
+                                            <div class="product-no-image" style="display: none;">
+                                                <span>{{ __('ui.no_image') }}</span>
+                                            </div>
                                         @else
                                             <div class="product-no-image"><span>{{ __('ui.no_image') }}</span></div>
                                         @endif

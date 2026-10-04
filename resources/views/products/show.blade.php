@@ -4,11 +4,7 @@
 
 @section('content')
 @php
-    $galleryImages = collect([$product->image])
-        ->filter()
-        ->merge($product->images->pluck('path'))
-        ->unique()
-        ->values();
+    $galleryImages = $product->getValidGalleryImages();
 @endphp
 <section class="product-detail-page">
     <div class="product-detail-container">
@@ -22,7 +18,7 @@
                     @if($galleryImages->isNotEmpty())
                         <button type="button" class="product-main-image-button" id="productMainImageButton" aria-label="{{ __('ui.product_gallery') }}">
                             <img
-                            src="{{ asset($galleryImages->first()) }}"
+                            src="{{ $galleryImages->first() }}"
                             alt="{{ $product->name }}"
                             class="product-main-image"
                             id="productGalleryImage"
@@ -46,10 +42,10 @@
                             <button
                                 type="button"
                                 class="product-gallery-thumbnail {{ $index === 0 ? 'active' : '' }}"
-                                data-gallery-image="{{ asset($galleryImage) }}"
+                                data-gallery-image="{{ $galleryImage }}"
                                 aria-label="{{ __('ui.product_image_number', ['number' => $index + 1]) }}"
                             >
-                                <img src="{{ asset($galleryImage) }}" alt="{{ $product->name }} {{ $index + 1 }}">
+                                <img src="{{ $galleryImage }}" alt="{{ $product->name }} {{ $index + 1 }}">
                             </button>
                         @endforeach
                     </div>
@@ -217,13 +213,17 @@
                         <article class="product-card">
                             <div class="product-image-wrapper-wrap">
                                 <a href="{{ route('products.show', $item) }}" class="product-image-wrapper">
-                                    @if($item->image)
+                                    @if($item->image_url)
                                         <img
-                                            src="{{ asset($item->image) }}"
+                                            src="{{ $item->image_url }}"
                                             alt="{{ $item->name }}"
                                             class="product-image"
                                             loading="lazy"
+                                            onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}"
                                         >
+                                        <div class="product-no-image" style="display: none;">
+                                            <span>No Image</span>
+                                        </div>
                                     @else
                                         <div class="product-no-image">
                                             <span>No Image</span>
@@ -277,7 +277,7 @@
 @if($galleryImages->isNotEmpty())
     <div class="product-lightbox" id="productLightbox" aria-hidden="true">
         <button type="button" class="product-lightbox-close" id="productLightboxClose" aria-label="Close">&times;</button>
-        <img src="{{ asset($galleryImages->first()) }}" alt="{{ $product->name }}" id="productLightboxImage">
+        <img src="{{ $galleryImages->first() }}" alt="{{ $product->name }}" id="productLightboxImage">
     </div>
 @endif
 
