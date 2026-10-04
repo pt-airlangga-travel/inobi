@@ -1876,19 +1876,13 @@ button {
         gap: 25px;
     }
 
-    .brand span {
-        max-width: 160px;
-        font-size: 12px;
-    }
+    .brand span { max-width: 190px; font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .main-nav {
         gap: 22px;
     }
 
-    .main-nav > a,
-    .main-nav .nav-dropdown > a {
-        font-size: 12px;
-    }
+    .main-nav > a, .main-nav .nav-dropdown > a { font-size: 16px; font-weight: 700; font-family: var(--font-main); }
 
     .dropdown-menu {
         right: -20px;
@@ -1966,11 +1960,7 @@ button {
         max-height: 42px;
     }
 
-    .brand span {
-        max-width: 170px;
-
-        font-size: 12px;
-    }
+    .brand span { max-width: 190px; font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .main-nav {
         display: none;
@@ -2184,11 +2174,7 @@ button {
         padding: 0 15px;
     }
 
-    .brand span {
-        max-width: 145px;
-
-        font-size: 11px;
-    }
+    .brand span { max-width: 190px; font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .brand img {
         max-width: 38px;
@@ -3184,12 +3170,7 @@ body {
     gap: 38px;
 }
 
-.main-nav > a,
-.main-nav .nav-dropdown > a {
-    height: 90px;
-    font-size: 15px;
-    font-weight: 700;
-}
+.main-nav > a, .main-nav .nav-dropdown > a { height: 90px; font-size: 16px; font-weight: 700; font-family: var(--font-main); }
 
 .brand {
     gap: 15px;
@@ -3615,14 +3596,9 @@ body {
         gap: 25px;
     }
 
-    .main-nav > a,
-    .main-nav .nav-dropdown > a {
-        font-size: 14px;
-    }
+    .main-nav > a, .main-nav .nav-dropdown > a { font-size: 16px; font-weight: 700; font-family: var(--font-main); }
 
-    .brand span {
-        font-size: 14px;
-    }
+    .brand span { font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .hero-content h1 {
         font-size: 54px;
@@ -3656,10 +3632,7 @@ body {
         max-height: 45px;
     }
 
-    .brand span {
-        max-width: 190px;
-        font-size: 13px;
-    }
+    .brand span { max-width: 190px; font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .mobile-menu-btn {
         width: 46px;
@@ -3840,10 +3813,7 @@ body {
 
 @media (max-width: 480px) {
 
-    .brand span {
-        max-width: 160px;
-        font-size: 12px;
-    }
+    .brand span { max-width: 190px; font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .brand img {
         max-width: 42px;
@@ -8281,9 +8251,7 @@ img.admin-product-preview {
     width: 100%;
 }
 
-.brand span {
-    font-size: 16px;
-}
+.brand span { font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
 .main-nav {
     margin-left: auto;
@@ -8297,9 +8265,7 @@ img.admin-product-preview {
 }
 
 @media (max-width: 1100px) {
-    .brand span {
-        font-size: 15px;
-    }
+    .brand span { font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .main-nav > a,
     .main-nav .products-link {
@@ -8380,14 +8346,14 @@ img.admin-product-preview {
     .language-switcher {
         margin: 0;
         padding: 2px;
-        font-size: 11px;
+        font-size: 15px;
     }
 
     .language-switcher a {
-        min-width: 24px;
+        min-width: 30px;
         height: 24px;
-        padding: 0 6px;
-        font-size: 10.5px;
+        padding: 0 8px;
+        font-size: 15px;
     }
 
     .mobile-menu-btn {
@@ -8454,9 +8420,10 @@ img.admin-product-preview {
         width: 100%;
         padding: 0 14px;
         border-radius: 8px;
-        font-size: 14.5px;
-        font-weight: 600;
-        color: #2d3748;
+        font-family: var(--font-main);
+        font-size: 16px;
+        font-weight: 700;
+        color: #333333;
         background: transparent;
         border: none;
         text-decoration: none;
@@ -8530,13 +8497,13 @@ img.admin-product-preview {
     }
 
     .dropdown-heading span {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
         color: var(--color-primary);
     }
 
     .dropdown-heading p {
-        font-size: 12px;
+        font-size: 13px;
         color: #6b7280;
         margin: 2px 0 0;
     }
@@ -8559,12 +8526,12 @@ img.admin-product-preview {
     }
 
     .dropdown-products a strong {
-        font-size: 13px;
+        font-size: 14px;
         color: #1f2937;
     }
 
     .dropdown-products a small {
-        font-size: 11px;
+        font-size: 12px;
         color: #6b7280;
         margin-top: 2px;
     }
@@ -8599,9 +8566,7 @@ img.admin-product-preview {
         min-width: 32px;
     }
 
-    .brand span {
-        font-size: 10.5px;
-    }
+    .brand span { font-size: 16px; font-family: var(--font-main); font-weight: 700; }
 
     .header-actions {
         gap: 4px;
@@ -8632,4 +8597,6 @@ img.admin-product-preview {
 .footer-bottom-links { display: flex; gap: 24px; }
 .footer-bottom-links a { color: rgba(255, 255, 255, 0.45); font-size: 11px; text-decoration: none; }
 .footer-bottom-links a:hover { color: #ffffff; }
+
+
 
