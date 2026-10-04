@@ -33,7 +33,7 @@ class HomeController extends Controller
         $categories = Category::withCount('products')->orderBy('id')->get();
 
         return view(
-            'Home',
+            'home',
             compact('products', 'featuredProduct', 'posts', 'featuredWorks', 'categories')
         );
     }
